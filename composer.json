@@ -2,8 +2,41 @@
     "name": "root/builder",
     "type": "project",
     "license": "MIT",
-    "require": {},
+    "require": {
+        "php": ">=5.4"
+    },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5"
+        "phpunit/phpunit": "^4",
+        "squizlabs/php_codesniffer": "^3.3",
+        "wp-coding-standards/wpcs": "^1",
+        "phpcompatibility/php-compatibility": "^9",
+        "dealerdirect/phpcodesniffer-composer-installer": "0.4.4",
+        "johnpbloch/wordpress-core": "^5.2",
+        "automattic/vipwpcs": "^0.3.0"
+    },
+    "scripts": {
+        "lint": "phpcs",
+        "lint-fix": "phpcbf",
+        "test": "phpunit",
+        "coverage": "phpunit --coverage-html=coverage"
+    },
+    "replace": {
+        "phpseclib/phpseclib": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Builder\\": "includes"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Builder\\Tests\\": "tests/includes"
+        }
+    },
+    "config": {
+        "platform": {
+            "php": "5.4"
+        },
+        "sort-packages": true
     }
 }

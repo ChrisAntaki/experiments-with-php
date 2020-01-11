@@ -1,0 +1,26 @@
+<phpunit
+        bootstrap="tests/bootstrap.php"
+        backupGlobals="false"
+        processIsolation="false"
+        colors="true">
+    <testsuites>
+        <testsuite name="Subscribe With Google Test Suite">
+            <directory suffix=".php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <ini name="error_reporting" value="32767" />
+        <ini name="display_errors" value="1" />
+        <ini name="display_startup_errors" value="1" />
+        <const name="BUILDER_TESTS" value="1" />
+    </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">includes</directory>
+            <exclude>
+                <file>includes/loader.php</file>
+                <directory>includes/vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
