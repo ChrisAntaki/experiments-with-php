@@ -1,0 +1,9 @@
+{
+    "name": "root/builder",
+    "type": "project",
+    "license": "MIT",
+    "require": {},
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.5"
+    }
+}
