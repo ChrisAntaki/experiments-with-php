@@ -18,7 +18,8 @@
         "lint": "phpcs",
         "lint-fix": "phpcbf",
         "test": "phpunit",
-        "coverage": "phpunit --coverage-html=coverage"
+        "coverage": "phpunit --coverage-html=coverage",
+        "test-on-travis":  "phpunit --coverage-clover=coverage/php/coverage.xml"
     },
     "replace": {
         "phpseclib/phpseclib": "*"

@@ -33,7 +33,11 @@ script:
     fi
   - |
     if [[ "$SCRIPT" == "unit" ]]; then
-      composer coverage || exit 1
+      composer test-on-travis || exit 1
+
+      # Upload Coverage to CodeCov
+      npm i codecov
+      ./node_modules/.bin/codecov -f coverage/php/coverage.xml
     fi
 
 jobs:
